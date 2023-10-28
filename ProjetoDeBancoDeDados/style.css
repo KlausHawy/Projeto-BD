@@ -1,0 +1,80 @@
+*{
+    margin: 0 auto;
+}
+body{
+    background-color: rgba(255, 255, 0, 0.479);
+    width: auto;
+    padding: 0%;
+}
+.principal{
+    display: block;
+    width: 100%;
+}
+h1,h2,h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    width: 75%;
+    font-size: 17px;
+}
+.cabecalho{
+    padding-top: 20px;
+    width: 100%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aqua;
+}
+.cabecalho > h1{
+    margin-bottom: 20px;
+}
+.cabecalho > p{
+    margin-bottom: 5px;
+    margin-left: 15%;
+}
+.cabecalho > h2{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.corpo{ 
+    width: 500px;
+    margin: auto;
+}
+#conteudo{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 4%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(131, 83, 83, 0.747);
+}
+.der{
+}
+.dert{
+    
+    background-color: white;
+}
+.ml{
+
+}
+.mlt{
+    background-color: white;
+}
+.mf{
+
+}
+.mft{
+    background-color: white;
+}
+.rodape{
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+a{
+    color: aliceblue;
+}

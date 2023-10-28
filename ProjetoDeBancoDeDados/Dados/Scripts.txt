@@ -1,0 +1,59 @@
+CREATE TABLE Editora(
+  Id char(4) NOT NULL,
+  Nome varchar(250) NOT NULL,
+  Cidade varchar(250) NOT NULL,
+  Estado varchar(250) NOT NULL,
+  Pais varchar(250) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE Autor(
+  Cpf char(11) NOT NULL,
+  Nome varchar(255) NOT NULL,
+  Nacionalidade varchar(250),
+  PRIMARY KEY (cpf)
+);
+
+CREATE TABLE Livro(
+  Isbn char(6) NOT NULL,
+  Titulo varchar(50) NOT NULL,
+  AnoDePublicação date,
+  NumeroDePaginas int,
+  Editora char(4),
+  Autor char(11),
+  PRIMARY KEY (isbn),
+  FOREIGN KEY (Editora) REFERENCES Editora (id),
+  FOREIGN KEY (Autor) REFERENCES Autor (cpf)
+);
+
+CREATE TABLE Leitor(
+  Cpf char(11) NOT NULL,
+  Nome varchar(250) NOT NULL,
+  DtDeNasc date NOT NULL,
+  Endereco varchar(500) NOT NULL, 
+  Telefone varchar(20) NOT NULL,
+  Email varchar(250),
+  PRIMARY KEY (Cpf)
+);
+
+CREATE TABLE Emprestimo(
+  Id char(4) NOT NULL,
+  DtDeEmprestimo date NOT NULL,
+  DtDeDevolucao date NOT NULL,
+  Isbn char(6),
+  Cpf char(11),
+  PRIMARY KEY (id),
+  FOREIGN KEY (Isbn) REFERENCES Livro (isbn),
+  FOREIGN KEY (Cpf) REFERENCES Leitor (cpf)
+);
+
+CREATE TABLE His_DeEmprestimo(
+  Id char(5) NOT NULL,
+  IdDoEmprestimo char(4) NOT NULL,
+  DtDeEmprestimo date NOT NULL,
+  DtDeDevolucao date NOT NULL,
+  Isbn char(6) NOT NULL,
+  Cpf char(11) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (IdDoEmprestimo) REFERENCES Emprestimo (id)
+);
